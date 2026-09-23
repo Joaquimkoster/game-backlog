@@ -1,4 +1,4 @@
-package com.BacklogDeJogos.backend;
+package com.BacklogDeJogos.backend.model;
 
 
 import jakarta.persistence.Column;
@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 @Table(name = "Game")
 
 public class Game {
-	@id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
@@ -32,7 +32,7 @@ public class Game {
 
 	}
 
-	public Games(String name, String description, double value, int quantity) {
+	public Game(String name, String description, double value, int quantity) {
 		this.name = name;
 		this.description = description;
 		this.value = value;
@@ -75,7 +75,7 @@ public class Game {
 		this.quantity = quantity;
 	}
 
-	@override
+	@Override
 	public String toString() {
 		return "Game [id=" + id + ", name=" + name + ", description=" + description + ", value=" + value
 				+ ", quantity=" + quantity + "]";
